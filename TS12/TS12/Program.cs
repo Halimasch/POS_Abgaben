@@ -21,7 +21,7 @@ namespace TS12
             }
 
             // 3.
-            Console.WriteLine("Alle Lehrer Kurzzeichen");
+            Console.WriteLine("\nAlle Lehrer Kurzzeichen");
 
             string[] kurzzeichen = school.GetTeachersShortCut();
             foreach(string s in kurzzeichen)
