@@ -58,7 +58,7 @@ namespace TS12
                 {
                     if(l.GetShortCut() == kz)
                     {
-                        data = "$Alle Fächer des Lehrers " + l.ToString() + "\n\t";
+                        data = "\nAlle Fächer des Lehrers " + l.ToString() + "\n\t";
 
                         foreach(string s in m_DAL.GetSubject(kz)) 
                         {
