@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<Bestellungen>
+  <Firma PLZ="8010" Ort="Graz">Huber<Artikelliste><Artikel ArtID="100" Preis="2,50" Menge="120">Heft</Artikel><Artikel ArtID="120" Preis="1,80" Menge="100">Kuli</Artikel></Artikelliste></Firma>
+  <Firma PLZ="1010" Ort="Wien">Weber<Artikelliste><Artikel ArtID="110" Preis="3,20" Menge="80">Buch</Artikel><Artikel ArtID="100" Preis="2,20" Menge="100">Heft</Artikel><Artikel ArtID="575" Preis="0,45" Menge="110">Radierer</Artikel><Artikel ArtID="140" Preis="1,05" Menge="200">Notizblock</Artikel></Artikelliste></Firma>
+  <Firma PLZ="4040" Ort="Linz">Hofer<Artikelliste><Artikel ArtID="110" Preis="4,00" Menge="50">Buch</Artikel><Artikel ArtID="120" Preis="1,80" Menge="50">Kuli</Artikel><Artikel ArtID="130" Preis="0,30" Menge="100">Bleistift</Artikel></Artikelliste></Firma>
+</Bestellungen>
