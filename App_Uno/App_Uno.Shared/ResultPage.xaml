@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="App_Uno.ResultPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App_Uno"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+    
+        <Button Content="Go back" Click="OnClick2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text ="IP Rechner - Results" FontWeight="Bold" ></TextBlock>
+            </StackPanel>    
+                <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text ="..Netw. Address:    "></TextBlock>
+                <TextBlock  x:Name="netadd" Text="lskdf" Margin="15 0"/>
+                <TextBlock  x:Name="netaddbin" Text="skdjf" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text ="..Host Minimum:"></TextBlock>
+                <TextBlock  x:Name="minhost" Text="lsdkjf"  Margin="15 0"/>
+                <TextBlock  x:Name="minhostbin" Text="lskdjf" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text =".Host Maximium:"></TextBlock>
+                <TextBlock  x:Name="maxhost" Text="ksldf" Margin="15 0"/>
+                <TextBlock  x:Name="maxhostbin" Text="lksmd"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text ="Broadb. Address: "></TextBlock>
+                <TextBlock  x:Name="broad" Text="sjkdfn " Margin="15 0"/>
+                <TextBlock  x:Name="broadbin" Text="slkdfj"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
+
