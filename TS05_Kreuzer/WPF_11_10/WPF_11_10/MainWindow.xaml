@@ -1,0 +1,45 @@
+﻿<Window x:Class="WPF_11_10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_11_10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="LightGreen">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Label Name="lblFamilieEinlesen" Content="Familie Einlesen" FontSize="30" Margin="5" BorderBrush="Black" BorderThickness="2" Background="WhiteSmoke" HorizontalContentAlignment="Center"/>
+            <DockPanel Grid.Row="1" Background="Yellow">
+                <Label FontSize="20">Familienname:</Label>
+                <TextBox x:Name="tbxFamilienname" Background="White" Margin="5" Height="30" Width="150" HorizontalAlignment="Right"/>
+            </DockPanel>
+            <DockPanel Background="Yellow">
+                <Label FontSize="20">Mann:</Label>
+                <TextBox x:Name="tbxMann" Background="White" Margin="5" Height="30" Width="150" HorizontalAlignment="Right"/>
+            </DockPanel>
+            <DockPanel Background="Yellow">
+                <Label FontSize="20">Frau:</Label>
+                <TextBox x:Name="tbxFrau" Background="White" Margin="5" Height="30" Width="150" HorizontalAlignment="Right"/>
+            </DockPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1">
+            <Label Name="lblFamilienListen" Content="Familien Listen" FontSize="30" Margin="5" BorderBrush="Black" BorderThickness="2" Background="WhiteSmoke" HorizontalContentAlignment="Center"/>
+            <ListBox x:Name="lbx1" FontSize="20" Margin="10" Height="105" />
+        </StackPanel>
+        <DataGrid x:Name="dgr1" Height="160" Margin="20" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="btnFamiliennameSpeichern" Click="btnFamiliennameSpeichern_Click" Background="GreenYellow" Width="320" Height="25" Content="Familienname speichern" Margin="5,70,5,-80" Grid.Row="1" />
+            <Button x:Name="btnFamilieSpeichern" Click="btnFamilieSpeichern_Click" Background="GreenYellow" Width="320" Height="25" Content="Familie speichern" Grid.Row="1" Margin="5,70,5,-20" />
+            <Button x:Name="btnXmlSpeichern" Click="btnXmlSpeichern_Click" Content="In eine XML-Datei speichern" Background="LightSalmon" FontSize="24" FontWeight="Bold" Margin="8" Grid.Row="2" Grid.ColumnSpan="2" Width="800" BorderBrush="Black" BorderThickness="2" />
+     </Grid>
+</Window>
