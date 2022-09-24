@@ -1,0 +1,152 @@
+﻿<Window x:Class="Fußball_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fußball_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- 
+             Binding / Initialisierungen im Konstruktor -->
+        <StackPanel Grid.ColumnSpan="4" Background="#CCDDEE">
+            <Label Name="labPlay00" FontSize="18" Content="Player Admin-Tool" HorizontalContentAlignment="Center"
+                   Background="LightGreen" FontWeight="Bold"/>
+        </StackPanel>
+        <!-- 
+              ACHTUNG -*- ACHTUNG -*- ACHTUNG -*- ACHTUNG -*- ACHTUNG -*- ACHTUNG -*- ACHTUNG -*- ACHTUNG -*- ACHTUNG -*-
+              Bei den Bindings muss Mode=OneWay gesetzt werden. D.h., dass die Änderung erste dann wirksam wird, nachdem
+              die Eigenschaft verändert wurde!!! Andernfalls wirkt das Default-Binding. D.h. sobald eine Änderung in der
+              GUI durchgeführt wurde, ist sie bereits in der Collection sichtbar!!!
+              -->
+        <StackPanel Grid.RowSpan="2" Grid.Row="1" Margin="5" Background="#CCDDEE">
+            <Button Name="btnPlay01" FontSize="13" Margin="5" Content="Display Players" Click="btnPlay01_Click" Background="Azure" />
+            <Button Name="btnAddPlay01" FontSize="13" Margin="5" Background="Azure" Content="Add Player" />
+            <Button Name="btnRemPlay02" FontSize="13" Margin="5" Background="Azure"  Content="Remove Player" />
+            <!--Eine TextBox braucht scheinbar ein StringFormat, um ein Objekt mittels ToString() ausgeben zu können?!-->
+            <TextBox x:Name="labPlayer01" FontSize="13" Margin="5,5,4.2,5" 
+                     Background="BurlyWood" HorizontalContentAlignment="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2.2*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <CheckBox Name="cbxStr01" FontSize="13" Margin="5, 5, 5, 0" Content="Street:" Background="LightYellow"></CheckBox>
+                    <CheckBox Name="cbxZip01" FontSize="13" Margin="5, 1, 5, 0" Content="ZIP:" Background="LightYellow"></CheckBox>
+                    <CheckBox Name="cbxCit01" FontSize="13" Margin="5, 1, 5, 0" Content="City:" Background="LightYellow"></CheckBox>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBox Name="tbxStr01" FontSize="13" Margin="0, 0, 5, 0" 
+                             Background="LightGoldenrodYellow"/>
+                    <TextBox Name="tbxZip01" FontSize="13" Margin="0, 1, 5, 0"  
+                             Background="LightGoldenrodYellow"/>
+                    <TextBox Name="tbxCit01" FontSize="13" Margin="0, 1, 5, 0" 
+                             Background="LightGoldenrodYellow"/>
+                </StackPanel>
+
+            </Grid>
+            <Label Name="labAdr04" FontSize="13" Margin="5" Content="Player Data" Background="BurlyWood" 
+                   HorizontalContentAlignment="Center"/>
+            <Grid Margin="0,0,-0.4,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2.2*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <CheckBox Name="cbxNam01" FontSize="13" Margin="5, 4, 5, 0" Content="Name" Background="LightYellow"></CheckBox>
+                    <CheckBox Name="cbxPos01" FontSize="13" Margin="5, 7, 5, 0" Content="Position" Background="LightYellow"></CheckBox>
+                    <CheckBox Name="cbxBon01" FontSize="13" Margin="5, 7, 5, 0"  Content="Bonus" Background="LightYellow"></CheckBox>
+                </StackPanel>
+                <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
+                    <TextBox Name="tbxNam01" FontSize="13" Margin="0, 0, 5, 0" Background="LightGoldenrodYellow" Height="24"/>
+                    <ComboBox Name="cmbPos01" FontSize="13" Margin="0, 1, 5,0" Background="LightGoldenrodYellow" Height="24" />
+                    <TextBox Name="tbxBon01" FontSize="13" Margin="0, 1, 5, 0" Background="LightGoldenrodYellow" Height="24"/>
+                </StackPanel>
+            </Grid>
+            <Button Name="btnPlay02" FontSize="13" Margin="5" Content="Accept Changes" Background="Azure" />
+            <Label x:Name="labPla14" FontSize="13"
+                   Background="BurlyWood" Margin="5"/>
+            <TextBox x:Name="lbxPla15" FontSize="13" Margin="5" Background="LightYellow"/>
+        </StackPanel>
+        <!-- 
+        EXERCISING LISTBOX
+        -->
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="5" Background="#CCDDEE" >
+            <Label Name="labListBox" FontSize="16" Content="Exercise ListBox" HorizontalContentAlignment="Center" Margin="5"
+                   Background="LightGreen"/>
+            <Label x:Name="labPla11" FontSize="13" HorizontalContentAlignment="Stretch"
+                   Background="BurlyWood" Margin="5"/>
+            <ListBox x:Name="lbxPla11" FontSize="13" Margin="5"  Background="LightYellow" >
+            </ListBox>
+            <Label x:Name="labPla12" FontSize="13" Background="BurlyWood" Margin="5"/>
+            <ListBox x:Name="lbxPla13" FontSize="13" Margin="5,5,5.4,5" Background="LightYellow">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Height="40">
+                            <Label />
+                            <StackPanel Orientation="Horizontal" Height="10">
+                                <ListBoxItem  Margin="0,-10,0,-10"/>
+                                <ListBoxItem  Margin="0,-10,0,-10"/>
+                                <ListBoxItem  Margin="0,-10,0,-10" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <!-- 
+        EXERCISING ListView
+        -->
+        <StackPanel Grid.Column="2" Grid.Row="1" Margin="5" Background="#CCDDEE" >
+            <Label Name="labListView" FontSize="16" Content="Exercise ListView" HorizontalContentAlignment="Center" Margin="5"
+                   Background="LightGreen"/>
+            <Label x:Name="labLV1" FontSize="13"  HorizontalContentAlignment="Stretch"
+                   Background="BurlyWood" Margin="5"/>
+            <ListView x:Name="lbxLV1" FontSize="13" Margin="5" Background="LightYellow" >
+            </ListView>
+            <Label x:Name="labLV2" FontSize="13"
+                   Background="BurlyWood" Margin="5"/>
+            <ListView Name="livList" Margin="5" Background="LightYellow" FontSize="13" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name"  />
+                        <GridViewColumn Header="Position" />
+                        <GridViewColumn Header="Bonus" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <!-- 
+        EXERCISING DataGrid
+        -->
+        <StackPanel Grid.Column="3" Grid.Row="1" Margin="5" Background="#CCDDEE">
+            <Label Name="labDataGr" FontSize="16" Content="Exercise DataGrid" HorizontalContentAlignment="Center" Margin="5"
+                   Background="LightGreen"/>
+            <Label x:Name="labDG1" FontSize="13"  HorizontalContentAlignment="Stretch"
+                   Background="BurlyWood" Margin="5"/>
+            <DataGrid x:Name="dgrImmut" FontSize="13" Margin="5" Background="LightYellow" CanUserAddRows="False">
+            </DataGrid>
+            <Label x:Name="dgrMutable" FontSize="13"  
+                   Background="BurlyWood" Margin="5"/>
+            <DataGrid Name="livSelPlay" Margin="5" Background="LightYellow" FontSize="13"
+                      CanUserResizeColumns="True" AutoGenerateColumns="False" CanUserAddRows="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" />
+                    <DataGridTextColumn Header="ZIP" />
+                    <DataGridTextColumn Header="City"  />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
